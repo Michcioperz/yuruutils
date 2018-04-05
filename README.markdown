@@ -22,3 +22,5 @@ make
 ----
 
 This is the `README.markdown` file as seen in the git repo located at [pubgit.meekchopp.es/yuruutils](https://pubgit.meekchopp.es/yuruutils/).
+
+You can probably browse the repo (or rather, its deployment that powers this website) via [pubgit.meekchopp.es/yuruutils/build-working-tree](https://pubgit.meekchopp.es/yuruutils/build-working-tree).
