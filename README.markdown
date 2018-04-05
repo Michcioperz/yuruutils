@@ -14,6 +14,11 @@ cd yuruutils
 make
 ```
 
+## What's done
+
+ - `true`
+ - `false`
+
 ----
 
 This is the `README.markdown` file as seen in the git repo located at [pubgit.meekchopp.es/yuruutils](https://pubgit.meekchopp.es/yuruutils/).

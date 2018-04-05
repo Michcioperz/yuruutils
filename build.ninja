@@ -1,0 +1,18 @@
+asflags=-w+all -f elf64 -Ox
+ldflags=-s -S
+
+intermediate_dir=intermediate
+target_dir=bin
+src_dir=src
+
+rule as
+  command = nasm $asflags -o $out $in
+
+rule ld
+  command = ld $ldflags -o $out $in
+
+build true.o: as true.asm
+build true: ld true.o
+
+build false.o: as false.asm
+build false: ld false.o
