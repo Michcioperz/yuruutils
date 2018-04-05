@@ -16,4 +16,4 @@ make
 
 ----
 
-This is the `README.markdown` file as seen in the git repo located at [https://pubgit.meekchopp.es/yuruutils/].
+This is the `README.markdown` file as seen in the git repo located at [pubgit.meekchopp.es/yuruutils](https://pubgit.meekchopp.es/yuruutils/).
