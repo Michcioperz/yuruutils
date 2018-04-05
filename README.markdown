@@ -11,7 +11,7 @@ This is nowhere close to usable. This is licensed Affero GPL 3. You have been wa
 ```sh
 git clone https://pubgit.meekchopp.es/yuruutils/
 cd yuruutils
-make
+ninja
 ```
 
 ## What's done
