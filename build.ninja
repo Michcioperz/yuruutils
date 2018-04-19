@@ -16,3 +16,6 @@ build true: ld true.o
 
 build false.o: as false.asm
 build false: ld false.o
+
+build sleep.o: as sleep.asm
+build sleep: ld sleep.o

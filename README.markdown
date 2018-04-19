@@ -18,6 +18,7 @@ ninja
 
  - `true`
  - `false`
+ - `sleep` (without postfix unit support)
 
 ----
 
