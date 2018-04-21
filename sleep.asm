@@ -7,10 +7,12 @@ _start:
   jz .usage
   
   pop rcx ;skip argv[0]
-  pop rcx ;read argv[1]
 
+  .readNumber:
   xor rsi, rsi
-
+  pop rcx ;read argument
+  test rcx, rcx
+  jz .exit
   .readDigit:
   xor rax, rax ;zero out rax so it's pure for al
   mov al, byte [rcx] ;read a byte of the string into a register
@@ -31,6 +33,11 @@ _start:
   mov rax, 35 ;choose syscall 35 - nanosleep
   syscall ;start a syscall
 
+  pop rcx ;clean up our struct
+  pop rcx
+  jmp .readNumber ;try to read another argument
+
+  .exit:
   ;we're done here, time to leave
   mov rax, 60 ;syscall 60 - exit
   mov rdi, 0 ;exit code 0
