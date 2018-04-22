@@ -28,7 +28,7 @@ _start:
   ;syscall time, fun time
   push qword 0 ;set number of nanoseconds
   push qword rsi ;set number of seconds
-  mov rsi, 0 ;set second argument to null
+  xor rsi, rsi ;set second argument to null
   mov rdi, rsp ;point first argument to our time struct at stack top
   mov rax, 35 ;choose syscall 35 - nanosleep
   syscall ;start a syscall
