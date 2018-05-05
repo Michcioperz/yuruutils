@@ -1,21 +1,23 @@
-asflags=-w+all -f elf64 -Ox
-ldflags=-s -S
-
-intermediate_dir=intermediate
-target_dir=bin
-src_dir=src
+asflags=
+lldflags=-s -S -O3
+llcflags=-O3 -x86-asm-syntax=intel
 
 rule as
-  command = nasm $asflags -o $out $in
+  command = as $asflags -o $out $in
 
-rule ld
-  command = ld $ldflags -o $out $in
+rule link
+  command = ld.lld $lldflags -o $out $in
 
+rule llc
+  command = llc $llcflags -o $out $in
+
+build true.asm: llc true.ll
 build true.o: as true.asm
-build true: ld true.o
+build true: link true.o
 
+build false.asm: llc false.ll
 build false.o: as false.asm
-build false: ld false.o
+build false: link false.o
 
 build sleep.o: as sleep.asm
-build sleep: ld sleep.o
+build sleep: link sleep.o
